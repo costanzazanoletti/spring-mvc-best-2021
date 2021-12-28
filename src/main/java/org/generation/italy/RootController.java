@@ -18,16 +18,18 @@ public class RootController {
 
 	@GetMapping("/books")
 	public String books(Model model) {
+		model.addAttribute("type", "books");
 		model.addAttribute("title", "Books");
 		model.addAttribute("list",
 				Arrays.asList("How Beautiful We Were by Imbolo Mbue", "Intimacies by Katie Kitamura",
-						"The Love Songs of W.E.B. Du Bois by Honor&eacuto;e Fanonne Jeffers",
+						"The Love Songs of W.E.B. Du Bois by Honoré e Fanonne Jeffers",
 						"No One Is Talking About This by Patricia Lockwood",
-						"When We Cease to Understand the World by Benjam&iacuto; Labatut"));
+						"When We Cease to Understand the World by Benjamé Labatut"));
 		return "list";
 	}
 	@GetMapping("/songs")
 	public String songs(Model model) {
+		model.addAttribute("type", "songs");
 		model.addAttribute("title", "Songs");
 		model.addAttribute("list",
 				Arrays.asList("Wizkid feat. Tems, 'Essence'","Taylor Swift, 'All Too Well (10 Minute Version)'","Olivia Rodrigo, 'Drivers License'","Lil Nas X, 'Montero (Call Me By Your Name)'","Lucy Dacus, 'VBS'"));
@@ -35,6 +37,7 @@ public class RootController {
 	}
 	@GetMapping("/series")
 	public String series(Model model) {
+		model.addAttribute("type", "series");
 		model.addAttribute("title", "Series");
 		model.addAttribute("list",
 				Arrays.asList("The Great","Hacks", "Only Murders in the Building","Reservation Dogs", "Succession"));
@@ -42,6 +45,7 @@ public class RootController {
 	}
 	@GetMapping("/movies")
 	public String movies(Model model) {
+		model.addAttribute("type", "movies");
 		model.addAttribute("title", "Movies");
 		model.addAttribute("list",
 				Arrays.asList("Dune", "Spencer", "The Card Counter", "Drive My Car", "Passing"));

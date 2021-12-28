@@ -2,18 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	    <div th:replace="fragments :: head"></div>
-	    <title>Best of 2021</title> 
+	    <title th:text="${title}"></title> 
 	</head>
 	<body>
 		<div class="container">
 			<h1 th:replace="fragments :: app-title"></h1>
 			
-			<ul>
-				<li><a class="h2" th:href="@{/books}">books</a></li>
-				<li><a class="h2" th:href="@{/songs}">songs</a></li>
-				<li><a class="h2" th:href="@{/movies}">movies</a></li>
-				<li><a class="h2" th:href="@{/series}">series</a></li>
-			</ul>
+			<h2 class="text-capitalize" th:text="${type}"></h2>
+			<h3 th:text="${title}" class="text-primary"></h3>
+			<div th:text="${description}"></div>
+			<div th:insert="fragments :: button('/'+${type}, 'Back')"></div>
 		</div>
 		<div th:replace="fragments :: scripts"></div>
 	</body>
